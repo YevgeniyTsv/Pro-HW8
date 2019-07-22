@@ -138,21 +138,21 @@
 
         console.warn(`Task # ${++taskNumber}`);
 
-        function filter(array, f) {
+     function filter(array, f) {
             let newArray = [];
             
             for (let current of array ) {
-                newArray = [...newArray, f(current)];
+				if(f(current)){
+                newArray = [...newArray, current];
+                }
                 
             }
-
             return newArray;
         }
-        filter([5, 2, 5, 1, 6, 3, 6], function (el) {
-            return el > 2
+        let a = filter([5, 2, 5, 1, 6, 3, 6], function (el) {
+            return el > 2;
         });
-
-        console.log(filter);
+        console.log(a);
         
 
         // ВОТ ПРИМЕР КАК НАПИСАТЬ СВОЙ map
